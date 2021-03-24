@@ -23,6 +23,8 @@ const Register = () => {
             setAlert('Please enter all fields', 'danger');
         } else if (password !== password2) {
             setAlert('Passwords do not match', 'danger');
+        } else if (password.length < 6) {
+            setAlert('Password must be bigger than 6 characters', 'danger');
         } else {
             console.log('Register submit');
         }
