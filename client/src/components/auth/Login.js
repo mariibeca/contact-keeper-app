@@ -4,7 +4,7 @@ import AuthContext from '../../context/auth/authContext';
 
 const Login = (props) => {
     const alertContext = useContext(AlertContext);
-    const authContext = useContext(AuthContext);
+    const authContext = useContext(AuthContext);    
 
     const { setAlert } = alertContext;
     const { login, error, clearErrors, isAuthenticated } = authContext;
@@ -19,7 +19,7 @@ const Login = (props) => {
             clearErrors();
         }
         // eslint-disable-next-line
-    }, [error, isAuthenticated, props.history]);
+    }, [error, isAuthenticated, props.history]); 
 
     const [user, setUser] = useState({
         email: '',
@@ -33,14 +33,14 @@ const Login = (props) => {
     const onSubmit = e => {
         e.preventDefault();
         if(email === '' || password === '') {
-            setAlert('Please fill in all fields', 'danger');
+            setAlert('Please fill all fields', 'danger');
         } else {
             login({
                 email,
                 password
             });
         }
-    }
+    };
 
     return (
         <div className='form-container'>

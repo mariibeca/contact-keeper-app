@@ -17,7 +17,7 @@ import {
 const AuthState = props => {
     const initialState = {
         toke: localStorage.getItem('token'),
-        isAuthenticaded: null,
+        isAuthenticated: null,
         loading: true,
         user: null,
         error: null
@@ -106,7 +106,7 @@ const AuthState = props => {
         value={{
             token: state.token,
             isAuthenticated: state.isAuthenticated,
-            loadin: state.loading,
+            loading: state.loading,
             user: state.user,
             error: state.error,
             register,
